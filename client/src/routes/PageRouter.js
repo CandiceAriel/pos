@@ -9,12 +9,10 @@ const PageRouter = () => {
 
   return (
     <Routes>
-      { isUserAuthenticated &&
-        <Route
-          exact path='/'
-          element={<Home />}
-        />
-      } <Route exact path='/' element={<Login />}/>
+      <Route 
+        exact path='/' 
+        element={ isUserAuthenticated ? (<Home />) : (<Login />) }
+      />
     </Routes>
   )
 }

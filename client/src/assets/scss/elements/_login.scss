@@ -1,0 +1,13 @@
+@media screen and (max-width: 1440px) {
+  .o-login {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: auto;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+  }
+}
