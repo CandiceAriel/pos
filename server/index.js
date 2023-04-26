@@ -14,10 +14,22 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "gleeger888",
+  password: "password",
   database: "pos_restaurant"
 });
 
 app.listen(port, () => {
-  console.log("Server is tunning on ", port)
+  console.log("Server is tunning on ",port)
+})
+
+app.get("/", (req, res) => {
+  res.send("Hello admin")
+})
+
+app.get("/categories", (req, res) => {
+  db.query("select * from categories", (err, result)=>{
+    if( err ){
+      console.log(err)
+    } res.send(result)
+  })
 })
